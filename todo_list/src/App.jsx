@@ -5,7 +5,9 @@ export const App = () => {
     const [todoValue, setTodoValue] = useState('')
 
     //todoの追加機能
-    const [addTodos, setAddTodos] = useState(['ああああ', 'いいいい']);
+    const [addTodos, setAddTodos] = useState(['']);
+    //todoの詳細
+    const [todoDetail, setTodoDetail] = useState(['']);
 
     const onChangeTodoValue = (e) => setTodoValue(e.target.value);
 
@@ -26,19 +28,31 @@ export const App = () => {
     <>
       <div className="todo-area">
         <h1>TODOリスト</h1>
+        
         <input placeholder="TODOを入力する" value={todoValue} onChange={onChangeTodoValue} />
+        <textarea placeholder="詳細を入力する" value={todoDetail} onChange={onChangeTodoValue} />
         <button onClick={onClickAdd}>追加</button>
       </div>
       <div className="not-complete-area">
         <h2>todo一覧</h2>
-        {addTodos.map((todo, index) => {
-            return (
-               <div key={todo} className="todo-list">
-                  <li>{todo}</li>
-                  <button onClick={() => onClickDelete(index)}>削除</button>
-               </div>
-            );
-        })}
+        <table>
+          <thead>
+            <tr>
+              <td>ID</td>
+            </tr>
+          </thead>
+          <tbody id="todo-body">
+            {addTodos.map((todo, index) => (
+                <div key={todo} className="todo-list">
+                  <tr>
+                    <td>{index+1}</td>
+                    <td>{todo}</td>
+                    <td><button onClick={() => onClickDelete(index)}>削除</button></td>
+                  </tr>
+                </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </>
   );
