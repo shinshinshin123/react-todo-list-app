@@ -7,9 +7,6 @@ export const App = () => {
     //todoの追加
     const [addTodos, setAddTodos] = useState(['']);
 
-    //todoの詳細
-    // const [todoDetail, setTodoDetail] = useState(['']);
-
     const onChangeTodoValue = (e) => setTodoValue(e.target.value);
 
     const onClickAdd = () => {
@@ -25,6 +22,14 @@ export const App = () => {
         createTodos.splice(index, 1);
         setAddTodos(createTodos);
     };
+
+    //todoの詳細
+    // const [todoDetail, setTodoDetail] = useState(['']);
+
+    //todoのステータスに関して(未完了、完了、進行中)
+    const onClickSwitch = (index) => {
+      const
+    }
 
     return (
     <>
