@@ -4,10 +4,11 @@ import { useState } from "react";
 export const App = () => {
     const [todoValue, setTodoValue] = useState('')
 
-    //todoの追加機能
+    //todoの追加
     const [addTodos, setAddTodos] = useState(['']);
+
     //todoの詳細
-    const [todoDetail, setTodoDetail] = useState(['']);
+    // const [todoDetail, setTodoDetail] = useState(['']);
 
     const onChangeTodoValue = (e) => setTodoValue(e.target.value);
 
@@ -18,6 +19,7 @@ export const App = () => {
         setTodoValue('');
     };
 
+    //todoの削除
     const onClickDelete = (index) => {
         const createTodos = [...addTodos];
         createTodos.splice(index, 1);
@@ -28,9 +30,8 @@ export const App = () => {
     <>
       <div className="todo-area">
         <h1>TODOリスト</h1>
-        
         <input placeholder="TODOを入力する" value={todoValue} onChange={onChangeTodoValue} />
-        <textarea placeholder="詳細を入力する" value={todoDetail} onChange={onChangeTodoValue} />
+        {/* <textarea placeholder="詳細を入力する" value={todoDetail} onChange={onChangeTodoValue} /> */}
         <button onClick={onClickAdd}>追加</button>
       </div>
       <div className="not-complete-area">
@@ -43,13 +44,13 @@ export const App = () => {
           </thead>
           <tbody id="todo-body">
             {addTodos.map((todo, index) => (
-                <div key={todo} className="todo-list">
-                  <tr>
-                    <td>{index+1}</td>
-                    <td>{todo}</td>
-                    <td><button onClick={() => onClickDelete(index)}>削除</button></td>
-                  </tr>
-                </div>
+              <div key={todo} className="todo-list">
+                <tr>
+                  <td>{index+1}</td>
+                  <td>{todo}</td>
+                  <td><button onClick={() => onClickDelete(index)}>削除</button></td>
+                </tr>
+              </div>
             ))}
           </tbody>
         </table>
