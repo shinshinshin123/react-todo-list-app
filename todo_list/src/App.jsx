@@ -51,18 +51,18 @@ export const App = () => {
           <thead>
             <tr>
               <td>ID</td>
+              <td>タイトル</td>
+              <td>状態</td>
             </tr>
           </thead>
           <tbody id="todo-body">
             {addTodos.map((todo, index) => (
-              <div key={todo} className="todo-list">
                 <tr>
                   <td>{index+1}</td>
                   <td>{todo}</td>
                   {/* <td><button onClick={() => onClickSwitch(index)}>{todo.status}</button></td> */}
                   <td><button onClick={() => onClickDelete(index)}>削除</button></td>
-                </tr>
-              </div>
+               </tr>
             ))}
           </tbody>
         </table>
