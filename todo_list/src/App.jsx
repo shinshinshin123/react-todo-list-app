@@ -27,9 +27,15 @@ export const App = () => {
     // const [todoDetail, setTodoDetail] = useState(['']);
 
     //todoのステータスに関して(未完了、完了、進行中)
-    const onClickSwitch = (index) => {
-      const
-    }
+    // const onClickSwitch = (index) => {
+    //   const switchTodo = [...todoValue];
+    //   if (switchTodo[index].status === "進行中") {
+    //     switchTodo[index].status = "完了";
+    //   } else if (switchTodo[index].status === "完了") {
+    //     switchTodo[index].status = "進行中"
+    //   }
+    //   setTodoValue(switchTodo);
+    // };
 
     return (
     <>
@@ -53,6 +59,7 @@ export const App = () => {
                 <tr>
                   <td>{index+1}</td>
                   <td>{todo}</td>
+                  {/* <td><button onClick={() => onClickSwitch(index)}>{todo.status}</button></td> */}
                   <td><button onClick={() => onClickDelete(index)}>削除</button></td>
                 </tr>
               </div>
