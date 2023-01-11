@@ -65,7 +65,7 @@ export const App = () => {
         </thead>
       <tbody id="todo-body">
         {addTodos.map((todo, index, content) => (
-          <tr>
+          <tr key={todo}>
             <td>{index+1}</td>
             <td>{todo}</td>
             <td>{content}</td>
