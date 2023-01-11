@@ -14,4 +14,4 @@ todoを管理するstateは一つにしておきたいので、一つ一つのto
   // ここも↑と同じですが少し冗長ですね。以下でいいかと思います。const createTodos = [...addTodos]の一文いらないのでは？
   // const onClickDelete = (index) => setAddTodos(addTodos.splice(index, 1))
 
-・ アプリ起動して検証ツール開くとEach child in a list should have a unique "key" propというエラーが出ているかと思います。 map等ループ処理しているブロック内では、一番親要素にkeyという値を渡す必要があります！エラー文をコピペするなどして対処法調べてみてください！
+<!-- ・ アプリ起動して検証ツール開くとEach child in a list should have a unique "key" propというエラーが出ているかと思います。 map等ループ処理しているブロック内では、一番親要素にkeyという値を渡す必要があります！エラー文をコピペするなどして対処法調べてみてください！ -->
