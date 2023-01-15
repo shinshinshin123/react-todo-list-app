@@ -14,10 +14,8 @@ export const App = () => {
 
   const onClickAdd = () => {
     if (todoValue === "") return;
-    const createTodos = [...addTodos, todoValue];
-    const createContent = [...addContent, todoContent]
-      setAddTodos(createTodos);
-      setAddContent(createContent);
+      setAddTodos([...addTodos, todoValue]);
+      setAddContent([...addContent, todoContent]);
       setTodoValue("");
       setTodoContent("");
   };
